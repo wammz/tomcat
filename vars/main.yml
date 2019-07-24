@@ -1,0 +1,9 @@
+---
+# vars file for roles/tomcat
+#
+tomcat_port: 8081
+tomcat_rhel_package:
+        - tomcat
+        - tomcat-webapps
+        - tomcat-admin-webapps
+tomcat_config_file_path: /etc/tomcat

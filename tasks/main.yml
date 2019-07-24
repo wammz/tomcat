@@ -1,0 +1,8 @@
+---
+# tasks file for roles/tomcat
+- name: tasks for rhel based OSes
+  include: rhel.yml
+  when: ansible_os_family == 'RedHat'
+- name: tasks for debian systems
+  include: deb.yml
+  when: ansible_os_family == 'Debian'

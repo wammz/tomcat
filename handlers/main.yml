@@ -1,0 +1,6 @@
+---
+# handlers file for roles/tomcat
+- name: start and enable tomcat as a service
+  service: name=tomcat state=started enabled=yes
+- name: enable tomcat default port 8080 on firewalld
+  firewalld: port={{tomcat_port}}/tcp state=enabled permanent=yes immediate=yes

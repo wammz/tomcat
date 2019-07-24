@@ -1,0 +1,10 @@
+- name: install java on RHEL hosts
+  yum: name=java state=present
+- name: install tomcat version 7
+  yum: name={{tomcat_rhel_package}} state=present
+  notify:
+          - start and enable tomcat as a service
+          - enable tomcat default port 8080 on firewalld
+            #- name: change default port
+            #lineinfile: path={{tomcat_config_file_path}}/server.xml regexp='port="8080"' line='<Connector port="{{tomcat_port}}" protocol="HTTP/1.1"' backup=yes
+
